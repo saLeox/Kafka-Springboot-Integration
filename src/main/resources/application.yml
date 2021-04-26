@@ -1,0 +1,46 @@
+server:
+  port: 8001
+  
+#mybatis:
+#  config-location: classpath:mybatis/mybatis.cfg.xml
+#  type-aliases-package: com.gof.springcloud.entities
+#  mapper-locations: classpath:mybatis/mapper/*.xml
+
+logging:
+  file:
+    name: ./log/sample.log
+    
+topic:
+  group: app1
+  name: first_topic
+  topic_in_1: mystreamin
+  topic_out_1: mystreamout
+  topic_in_2: wordcount-input
+  topic_out_2: wordcount-output
+  topic_in_3: sum-input
+  topic_out_3: sum-output
+  topic_window: window-pattern
+  topic_in_4: streamingTopic1
+  topic_out_4: streamingTopic2
+spring:
+  kafka:
+    bootstrap-servers: localhost:9091
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      retries: 0
+      acks: all
+      batch-size: 16384
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: test-consumer-group
+      enable-auto-commit: true
+      auto-offset-reset: latest
+
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfigurationdo
+  application:
+    name: gk1-sample
+      
+
