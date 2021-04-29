@@ -31,5 +31,6 @@ Prepare the kafka cluster, can follow the instruction [here](https://github.com/
 
 ## *After you deploy*
 The producer and streaming-interactive-query modules are open on Swagger page once you start this project.
+
 The incoming topics can be viewd on [Kafdrop](http://localhost:9001/) also.
 <div align=center><img src="https://raw.githubusercontent.com/saLeox/photoHub/main/20210429203451.png" width="60%"/></div>
