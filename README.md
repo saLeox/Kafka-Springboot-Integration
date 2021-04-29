@@ -8,16 +8,19 @@
 
  - [x] 1. [Kafka Producer](https://github.com/saLeox/springboot-kafka-streams/tree/main/src/main/java/com/gof/springcloud/producer)
 	
-	Allow customized class to send topic.
+	Allow [customized](https://github.com/saLeox/springboot-kafka-streams/blob/main/src/main/java/com/gof/springcloud/producer/KafkaProducerConfig.java) class to send topic.
+	
  - [x]  2. [Kafka Consumer](https://github.com/saLeox/springboot-kafka-streams/tree/main/src/main/java/com/gof/springcloud/consumer)
 	
-	Allow customized class to receive topic.
+	Allow [customized](https://github.com/saLeox/springboot-kafka-streams/blob/main/src/main/java/com/gof/springcloud/consumer/KafkaConsumerConfig.java) class to receive topic.
+	
  - [x]  3. [Kafka Streaming](https://github.com/saLeox/springboot-kafka-streams/tree/main/src/main/java/com/gof/springcloud/streams) (including windows)
 
  - Perform Transformations and Actions. 	 
  - Materialize the KTable.
  - Transfer to other topic.
  - Handover Topology management to spring and only need to configure the connection info in one [place](https://github.com/saLeox/springboot-kafka-streams/blob/main/src/main/java/com/gof/springcloud/streams/KafkaStreamsConfig.java).
+
  - [x] 4. [InteractiveQuery to Ktable](https://github.com/saLeox/springboot-kafka-streams/tree/main/src/main/java/com/gof/springcloud/interactiveQuery)
 	
 	Get the KafkaStreams by bean injection in Spring, refer to [here](https://github.com/saLeox/springboot-kafka-streams/blob/main/src/main/java/com/gof/springcloud/streams/query/InteractiveQueryController.java).
