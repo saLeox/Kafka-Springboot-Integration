@@ -15,7 +15,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@Api("producer sample: booking")
+@Api("Kafka Producer Controller")
 public class ProducerController {
 	private Logger log = LoggerFactory.getLogger(ProducerController.class);
 
@@ -33,9 +33,6 @@ public class ProducerController {
 
 	@Value(value = "${topic.topic_in_4}")
     private String topic_in_4;
-
-	@Value(value = "${topic.topic_window}")
-	private String topic_window;
 
     @Autowired
     private KafkaTemplate<String, Booking> bookingKafkaTemplate;
@@ -66,21 +63,14 @@ public class ProducerController {
 
 	@PostMapping("/sendSumMsg")
 	@ApiOperation(value = "Sent a Sum msg")
-	public ResultVo<String> sendSumMsg(String key, String val){
-		kafkaTemplate.send(topic_in_3, key, val);
+	public ResultVo<String> sendSumMsg(String val){
+		kafkaTemplate.send(topic_in_3, val);
 		return new ResultVo<String>(true);
 	}
 
-	@PostMapping("/sendWindowWordCountMsg")
-	@ApiOperation(value = "Sent a Window WordCount msg")
-	public ResultVo<String> sendWindowWordCountMsg(String val){
-		kafkaTemplate.send(topic_window, val);
-		return new ResultVo<String>(true);
-	}
-
-	@PostMapping("/sendWindowMsg")
-	@ApiOperation(value = "Sent a Window msg")
-	public ResultVo<String> sendWindowMsg(String key, String val) {
+	@PostMapping("/sendWindowAppendMsg")
+	@ApiOperation(value = "Sent a Window Append msg")
+	public ResultVo<String> sendWindowAppendMsg(String key, String val) {
 		kafkaTemplate.send(topic_in_4, key, val);
 		return new ResultVo<String>(true);
 	}

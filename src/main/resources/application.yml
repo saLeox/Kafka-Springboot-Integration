@@ -19,9 +19,15 @@ topic:
   topic_out_2: wordcount-output
   topic_in_3: sum-input
   topic_out_3: sum-output
-  topic_window: window-pattern
   topic_in_4: streamingTopic1
   topic_out_4: streamingTopic2
+  
+stream:
+  katble:
+    wordcount: word-count
+    sum: sum
+    timewindow: windowStore
+    
 spring:
   kafka:
     bootstrap-servers: localhost:9091

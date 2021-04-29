@@ -22,7 +22,7 @@ public class SwaggerConfig {
 				.select()
 				.apis(RequestHandlerSelectors.basePackage("com.gof.springcloud.controller")
 						.or(RequestHandlerSelectors.basePackage("com.gof.springcloud.producer"))
-						.or(RequestHandlerSelectors.basePackage("com.gof.springcloud.interactiveQuery")))
+						.or(RequestHandlerSelectors.basePackage("com.gof.springcloud.streams.query")))
 				.paths(PathSelectors.any())
 				.build();
 	}
