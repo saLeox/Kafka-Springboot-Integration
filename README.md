@@ -1,5 +1,6 @@
 
 
+
 # Kafka practice on Springboot
 
 ## *Highlight*
@@ -29,8 +30,10 @@
 *Spark-streaming* or *Flink-streaming* need cluster to submit jobs, will not make any attempt so far.
 
 ## *Before you deploy*
-Prepare the kafka cluster, can follow the instruction [here](https://github.com/saLeox/kafka-cluster-docker-usage) and run on the top of docker.
 
+ - Prepare the kafka cluster, can follow the instruction [here](https://github.com/saLeox/kafka-cluster-docker-usage) and run
+   on the top of docker. 
+ - Create the topics in [yml](https://github.com/saLeox/springboot-kafka-practice/blob/main/src/main/resources/application.yml) in advance.
 
 ## *After you deploy*
 The producer and streaming-interactive-query modules are open on Swagger page once you start this project.
